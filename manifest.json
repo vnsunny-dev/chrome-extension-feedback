@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "Agentation Feedback",
+  "version": "1.0.0",
+  "description": "Click any element, annotate with structured feedback, and copy AI-ready prompts with CSS selectors & computed styles for Claude Code, Cursor, and more.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Agentation Feedback"
+  },
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "utils/storage.js",
+        "utils/selector.js",
+        "utils/styles-capture.js",
+        "utils/screenshot.js",
+        "utils/export.js",
+        "content/content.js"
+      ],
+      "css": [
+        "content/content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

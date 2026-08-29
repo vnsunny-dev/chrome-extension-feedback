@@ -1,0 +1,18 @@
+/* ============================================================
+   Agentation Feedback — Content Script Styles
+   Injected into host pages. All selectors scoped to our
+   Shadow DOM container to avoid conflicts.
+   ============================================================ */
+
+/* ---- Host-page overlay during inspection mode ---- */
+#agentation-feedback-root {
+  all: initial;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: 2147483647;
+  pointer-events: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+}

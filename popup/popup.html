@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentation Feedback</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup">
+    <!-- Header -->
+    <header class="popup-header">
+      <div class="header-brand">
+        <img src="../icons/icon32.png" alt="logo" class="header-logo">
+        <div>
+          <h1 class="header-title">Agentation Feedback</h1>
+          <p class="header-url" id="currentUrl" title="">—</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar" id="statsBar">
+      <div class="stat">
+        <span class="stat-value" id="totalCount">0</span>
+        <span class="stat-label">Total</span>
+      </div>
+      <div class="stat stat-critical">
+        <span class="stat-dot dot-critical"></span>
+        <span class="stat-value" id="criticalCount">0</span>
+      </div>
+      <div class="stat stat-major">
+        <span class="stat-dot dot-major"></span>
+        <span class="stat-value" id="majorCount">0</span>
+      </div>
+      <div class="stat stat-minor">
+        <span class="stat-dot dot-minor"></span>
+        <span class="stat-value" id="minorCount">0</span>
+      </div>
+    </div>
+
+    <!-- Note List -->
+    <div class="note-list" id="noteList">
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">📝</div>
+        <p class="empty-title">No notes yet</p>
+        <p class="empty-desc">Start inspection to annotate elements</p>
+      </div>
+    </div>
+
+    <!-- Action Bar -->
+    <div class="action-bar">
+      <button class="action-btn action-primary" id="btnInspect">
+        <span class="action-icon">🔍</span>
+        <span>Inspect</span>
+      </button>
+      <button class="action-btn action-secondary" id="btnCopyAll" title="Copy all notes as AI prompt">
+        <span class="action-icon">🤖</span>
+        <span>Copy All</span>
+      </button>
+      <div class="action-dropdown">
+        <button class="action-btn action-secondary" id="btnExport" title="Export notes">
+          <span class="action-icon">📥</span>
+          <span>Export</span>
+        </button>
+        <div class="dropdown-menu" id="exportMenu">
+          <button class="dropdown-item" data-export="json">📄 JSON</button>
+          <button class="dropdown-item" data-export="markdown">📝 Markdown</button>
+          <button class="dropdown-item" data-export="csv">📊 CSV</button>
+        </div>
+      </div>
+      <button class="action-btn action-danger" id="btnClear" title="Clear all notes">
+        <span class="action-icon">🗑️</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
